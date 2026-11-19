@@ -30,10 +30,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          tag="$(gh release view --repo supernovae-st/nika --json tagName --jq .tagName)"
+          tag="$(gh release view --repo nika-open/nika --json tagName --jq .tagName)"
           [[ "$tag" =~ ^v[0-9][0-9.]*$ ]] || { echo "::error::unexpected tag: $tag"; exit 1; }
           ver="${tag#v}"
-          action="$(gh release view --repo supernovae-st/nika-action --json tagName --jq .tagName)"
+          action="$(gh release view --repo nika-open/nika-action --json tagName --jq .tagName)"
           [[ "$action" =~ ^v1\.[0-9]+\.[0-9]+$ ]] || { echo "::error::unexpected nika-action tag: $action"; exit 1; }
           python3 scripts/heal_pins.py --engine "${ver}" --action "${action}"
           if git diff --quiet; then echo "pins already ${ver} · ${action} — nothing to heal"; exit 0; fi

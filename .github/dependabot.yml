@@ -14,7 +14,7 @@ updates:
     schedule:
       interval: weekly
     ignore:
-      - dependency-name: "supernovae-st/nika-action"
+      - dependency-name: "nika-open/nika-action"
     groups:
       github-actions:
         patterns:
