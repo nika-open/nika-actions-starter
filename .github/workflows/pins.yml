@@ -11,7 +11,7 @@ permissions:
   contents: read
 jobs:
   pins:
-    if: github.repository == 'supernovae-st/nika-actions-starter'
+    if: github.repository == 'nika-open/nika-actions-starter'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
