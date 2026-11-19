@@ -11,7 +11,7 @@ The carriers, each matched exactly once:
 
 * ``.github/workflows/nika-check.yml`` · ``default: '<engine>'``
 * ``.github/workflows/nika.yml`` · ``engine-version: '<engine>'``
-* both files · ``uses: supernovae-st/nika-action@<action tag>``
+* both files · ``uses: nika-open/nika-action@<action tag>``
 
 A missing or duplicated carrier refuses with nothing written, so a layout
 change turns the heal red instead of silently skipping a pin.
@@ -35,8 +35,8 @@ ACTION = re.compile(r"v1\.\d+\.\d+")
 CARRIERS = (
     (REUSABLE, "engine", re.compile(r"(default: ')(\d+\.\d+\.\d+)(')")),
     (SELF_CHECK, "engine", re.compile(r"(engine-version: ')(\d+\.\d+\.\d+)(')")),
-    (REUSABLE, "action", re.compile(r"(uses: supernovae-st/nika-action@)(v\d+\.\d+\.\d+)(\s)")),
-    (SELF_CHECK, "action", re.compile(r"(uses: supernovae-st/nika-action@)(v\d+\.\d+\.\d+)(\s)")),
+    (REUSABLE, "action", re.compile(r"(uses: nika-open/nika-action@)(v\d+\.\d+\.\d+)(\s)")),
+    (SELF_CHECK, "action", re.compile(r"(uses: nika-open/nika-action@)(v\d+\.\d+\.\d+)(\s)")),
 )
 
 
