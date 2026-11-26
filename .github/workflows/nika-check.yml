@@ -29,7 +29,7 @@ on:
         description: 'nika release to install'
         required: false
         type: string
-        default: '0.125.1'
+        default: '0.125.2'
 
 # The scopes the usage above grants: read the caller's files, post the comment.
 # A called workflow can only keep or narrow the caller's token.
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: nika-open/nika-action@v1.0.38  # first-party · tracks the action's release tag by design
+      - uses: nika-open/nika-action@v1.0.39  # first-party · tracks the action's release tag by design
         with:
           workflow: ${{ inputs.workflow }}
           mode: ${{ inputs.mode }}
